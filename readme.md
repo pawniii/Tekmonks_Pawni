@@ -14,10 +14,15 @@ This project is a Node.js service designed to classify SMS-like text messages as
   - [API Endpoint Testing](#api-endpoint-testing)
 - [Key Libraries Used](#key-libraries-used)
 
+Here is the corrected "Project Structure" section for your `README.md` file.
+
+Using a code block (with triple backticks \`\`\`) will fix the formatting issue you saw in your screenshot.
+
+```md
 ## Project Structure
 
-The repository is structured to separate concerns:
-spam/
+```
+
 ├── data/
 │   └── sms\_spam.csv         \# The raw dataset
 ├── models/
@@ -38,10 +43,12 @@ spam/
 │   └── unit/
 │       └── sorter.test.js   \# Unit tests for Model A
 ├── .gitignore
+├── API.md                   \# API endpoint documentation
 ├── package.json             \# Project dependencies
 ├── package-lock.json
+└── REPORT.md                \# In-depth model report
 
-
+```
 ## Installation
 
 1.  Clone the repository:
@@ -143,12 +150,13 @@ The baseline model was evaluated on the 20% held-out test set (1115 records).
     * **F1-Score:** 62.91%
 
 * **Confusion Matrix:**
-  
+
+        ```
                      (Predicted)
                     SPAM   |   HAM
      (Actual) SPAM | 145    | 0
      (Actual) HAM  | 171    | 798
-
+    ```
 ## 4. Analysis & Future Improvements
 
 ### Analysis
