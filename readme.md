@@ -38,10 +38,8 @@ This project is a Node.js service designed to classify SMS-like text messages as
 │   └── unit/
 │       └── sorter.test.js   \# Unit tests for Model A
 ├── .gitignore
-├── API.md                   \# API endpoint documentation
 ├── package.json             \# Project dependencies
 ├── package-lock.json
-└── REPORT.md                \# In-depth model report
 
 ```
 ## Installation
