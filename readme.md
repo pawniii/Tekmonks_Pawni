@@ -1,9 +1,22 @@
+You are 100% right. My apologies, that formatting is still completely broken.
+
+The `README.md` file I gave you has the code block markers (the triple backticks \`\`\`) in all the wrong places. They should *only* be around the project tree and the code snippets, not around regular text like the Table of Contents.
+
+This is the final, clean, **correctly formatted** `README.md` file. This one will look right on GitHub.
+
+-----
+
+### File: `README.md`
+
+(This is the final, clean version. Replace your entire `README.md` file with this.)
+
+```md
 # Node.js Spam Classification Service
 
 This project is a Node.js service designed to classify SMS-like text messages as "spam" or "ham" (not spam). It includes a from-scratch model, a library-based baseline, and a REST API for predictions.
 
 ## Table of Contents
-    ```
+
 - [Project Structure](#project-structure)
 - [Related Documentation](#related-documentation)
 - [Installation](#installation)
@@ -15,12 +28,44 @@ This project is a Node.js service designed to classify SMS-like text messages as
   - [API Endpoint Testing](#api-endpoint-testing)
 - [Creator](#creator)
 - [Final Note](#final-note)
-   ```
+
 ## Project Structure
-    ```
-spam/ ├── data/ │ └── sms_spam.csv # The raw dataset ├── models/ │ └── (created by script) # Stores the saved baseline-model.json ├── node_modules/ │ └── (ignored by git) ├── scripts/ │ └── training.js # Script to preprocess, train, and save Model B ├── src/ │ ├── features/ │ │ └── cleaning.js # Text preprocessing utility │ ├── model/ │ │ ├── baselineSorter.js # Model B: 'natural' library Naive Bayes │ │ └── countingWordsSorter.js # Model A: From-scratch Naive Bayes │ └── server/ │ └── app.js # The Express API server logic ├── test/ │ └── unit/ │ └── sorter.test.js # Unit tests for Model A ├── .gitignore ├── API.md # API endpoint documentation ├── package.json # Project dependencies ├── package-lock.json └── REPORT.md # In-depth model report
-    ```
-    
+
+This repository follows the recommended project structure.
+
+```
+
+spam/
+├── data/
+│   └── sms\_spam.csv
+├── models/
+│   └── baseline-model.json
+├── scripts/
+│   └── training.js
+├── src/
+│   ├── features/
+│   │   └── cleaning.js
+│   ├── model/
+│   │   ├── baselineSorter.js
+│   │   └── countingWordsSorter.js
+│   └── server/
+│       └── app.js
+├── test/
+│   ├── integrate/
+│   │   └── api.test.js
+│   └── unit/
+│       └── sorter.test.js
+├── .env.example
+├── .gitignore
+├── API.md
+├── eslint.config.js
+├── package.json
+├── package-lock.json
+├── .prettierrc
+└── REPORT.md
+
+````
+
 ## Related Documentation
 
 For a detailed analysis of this project, please see the following files:
@@ -39,7 +84,6 @@ For a detailed analysis of this project, please see the following files:
     ```bash
     npm install
     ```
-    This will install `express`, `natural` (v4.1.2), `csv-parse`, `zod`, `jest`, etc.
 
 ## Usage
 
@@ -49,33 +93,57 @@ Before running the API, you must train the baseline model.
 
 ```bash
 node scripts/training.js
+````
+
 This script performs the following actions:
 
-Loads and preprocesses the data/sms_spam.csv dataset.
+1.  Loads and preprocesses the `data/sms_spam.csv` dataset.
+2.  Splits the data into an 80/20 train/test set.
+3.  Trains the `baselineSorter` (Model B) on the training data.
+4.  Saves the trained classifier to `models/baseline-model.json`.
+5.  Prints a full evaluation report (Accuracy, Precision, Top Tokens, etc.) to the console.
 
-Splits the data into an 80/20 train/test set.
+### 2\. Run the API Server
 
-Trains the baselineSorter (Model B) on the training data.
+Once the `models/baseline-model.json` file has been created, you can start the API server.
 
-Saves the trained classifier to models/baseline-model.json.
-
-Prints a full evaluation report (Accuracy, Precision, etc.) to the console.
-
-2. Run the API Server
-Once the models/baseline-model.json file has been created, you can start the API server.
-
-Bash
-
+```bash
 npm run dev
-The server will start on http://localhost:3000.
+```
 
-Testing
-Unit Tests
+The server will start on `http://localhost:3000`.
+
+## Testing
+
+### Unit Tests
+
 Unit tests are included for the core math of the "from-scratch" Naive Bayes model (Model A).
 
-Bash
-
+```bash
 npm run test
-API Endpoint Testing
-The running API can be tested using curl or an API client like Postman.
-Screenshot of Postman tests can be found in the /testing-images folder
+```
+
+### API Endpoint Testing
+
+The running API can be tested using `curl` or an API client like Postman.
+
+**Example `POST /predict` request:**
+
+```bash
+curl.exe -X POST -H "Content-Type: application/json" -d '{"messages": ["hello, are we still on for 7pm?", "CONGRATS! You won a FREE entry!"]}' http://localhost:3000/predict
+```
+
+*Screenshot of Postman tests can be found in the `/testing-images` folder.*
+
+## Creator
+
+Made by **Pawni Dixit**
+
+-----
+
+## Final Note
+
+*This project serves as a technical foundation for building robust, real-time filtering services. Its goal is to reduce digital noise and ensure cleaner communication channels.*
+
+```
+```
