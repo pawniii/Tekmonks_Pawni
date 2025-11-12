@@ -114,12 +114,6 @@ npm run test
 
 The running API can be tested using `curl` or an API client like Postman.
 
-**Example `POST /predict` request:**
-
-```bash
-curl.exe -X POST -H "Content-Type: application/json" -d '{"messages": ["hello, are we still on for 7pm?", "CONGRATS! You won a FREE entry!"]}' http://localhost:3000/predict
-```
-
 *Screenshot of Postman tests can be found in the `/testing-images` folder.*
 
 ## Creator
