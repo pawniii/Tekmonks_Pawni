@@ -1,4 +1,4 @@
-# Node.js Sms spam pam Classification Service
+# Node.js Sms spam Classification Service
 
 This project is a Node.js service designed to classify SMS-like text messages as "spam" or "ham" (not spam) using classical machine learning. It fulfills the "Fresh Joiner Technical Exercise" requirements by implementing two models, an API, and a complete testing and documentation suite.
 
@@ -14,11 +14,6 @@ This project is a Node.js service designed to classify SMS-like text messages as
   - [API Endpoint Testing](#api-endpoint-testing)
 - [Key Libraries Used](#key-libraries-used)
 
-Here is the corrected "Project Structure" section for your `README.md` file.
-
-Using a code block (with triple backticks \`\`\`) will fix the formatting issue you saw in your screenshot.
-
-```md
 ## Project Structure
 
 ```
