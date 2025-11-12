@@ -15,7 +15,7 @@ This project is a Node.js service designed to classify SMS-like text messages as
   - [API Endpoint Testing](#api-endpoint-testing)
 - [Creator](#creator)
 - [Final Note](#final-note)
-    
+   ```
 ## Project Structure
     ```
 spam/ ├── data/ │ └── sms_spam.csv # The raw dataset ├── models/ │ └── (created by script) # Stores the saved baseline-model.json ├── node_modules/ │ └── (ignored by git) ├── scripts/ │ └── training.js # Script to preprocess, train, and save Model B ├── src/ │ ├── features/ │ │ └── cleaning.js # Text preprocessing utility │ ├── model/ │ │ ├── baselineSorter.js # Model B: 'natural' library Naive Bayes │ │ └── countingWordsSorter.js # Model A: From-scratch Naive Bayes │ └── server/ │ └── app.js # The Express API server logic ├── test/ │ └── unit/ │ └── sorter.test.js # Unit tests for Model A ├── .gitignore ├── API.md # API endpoint documentation ├── package.json # Project dependencies ├── package-lock.json └── REPORT.md # In-depth model report
